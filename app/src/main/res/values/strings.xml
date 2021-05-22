@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Algorithms  Visualizer</string>
+    <string name="bubble_sort">Bubble Sort</string>
+    <string name="insertion_sort">Insertion Sort</string>
+    <string name="selections_sort">Selection Sort</string>
+    <string name="merge_sort">Merge Sort</string>
+    <string name="quick_sort">Quick Sort</string>
+</resources>
