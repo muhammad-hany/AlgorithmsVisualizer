@@ -6,5 +6,6 @@
         <item>@string/insertion_sort</item>
         <item>@string/merge_sort</item>
         <item>@string/quick_sort</item>
+        <item>@string/radix_sort</item>
     </string-array>
 </resources>

@@ -17,7 +17,7 @@ class QuickAnimator(private val sortObj: QuickSort) {
             duration = 500
             interpolator = LinearInterpolator()
             addUpdateListener {
-                pivot.paint.color = it.animatedValue as Int
+               // pivot.paint.color = it.animatedValue as Int
                 comparedBar.paint.color = it.animatedValue as Int
                 sortObj.invalidate()
             }
@@ -48,21 +48,21 @@ class QuickAnimator(private val sortObj: QuickSort) {
 
             addListener({
                 sortObj.swap(pivotIndex, comparedBarIndex)
-                /*sortObj.sort()*/
-                compareEndAnimation(pivotIndex, comparedBarIndex)
+
+                compareEndAnimation(pivotIndex = comparedBarIndex,pivotIndex)
             })
         }.start()
     }
 
 
-    fun compareEndAnimation(bar1Index: Int, bar2Index: Int) {
-        val bar1 = sortObj.sortList[bar1Index]
+    fun compareEndAnimation(pivotIndex: Int, bar2Index: Int) {
+        val bar1 = sortObj.sortList[pivotIndex]
         val bar2 = sortObj.sortList[bar2Index]
-        ValueAnimator.ofArgb(bar1.paint.color, GraphBar.barDefaultColor).apply {
+        ValueAnimator.ofArgb(bar1.paint.color, bar2.lastPaint.color).apply {
             duration = 500
             interpolator = LinearInterpolator()
             addUpdateListener {
-                bar1.paint.color = it.animatedValue as Int
+               // bar1.paint.color = it.animatedValue as Int
                 bar2.paint.color = it.animatedValue as Int
                 sortObj.invalidate()
             }

@@ -40,6 +40,7 @@ class QuickSort(graphView: GraphView) : SortAlgorithm(graphView) {
                 break
             } else {
                 sortList = mutableListOf()
+                if (item.isNotEmpty()) item[0].paint.color=comparedColor
             }
         }
 
@@ -107,14 +108,14 @@ class QuickSort(graphView: GraphView) : SortAlgorithm(graphView) {
         animationState = ON_RESUME
         sortList = orderedList.first { it.size > 1 }
         pivot = sortList[0]
-        pivot.paint.color=compareColor
-        Log.i("LIST", "before sorting ..... /n ${barsList.toString()}")
+       // pivot.paint.color=compareColor
+        Log.i("LIST", "before sorting .....  $barsList")
         sort()
     }
 
     override fun onFinishSorting() {
         super.onFinishSorting()
-        Log.i("LIST", "after sorting ..... /n ${barsList.toString()}")
+        Log.i("LIST", "after sorting ..... $barsList")
     }
 
     private fun MutableList<GraphBar>.split(pivot: Int): MutableList<MutableList<GraphBar>> {
@@ -125,8 +126,10 @@ class QuickSort(graphView: GraphView) : SortAlgorithm(graphView) {
         } else if (this.size > 2) {
 
             list.add(this.subList(0, pivot).toMutableList())
+            list[0].forEach { it.paint.color=Color.parseColor("#2a9d8f") }
             list.add(mutableListOf(this[pivot]))
             list.add(this.subList(pivot + 1, this.size).toMutableList())
+            list[2].forEach { it.paint.color=Color.parseColor("#e76f51") }
         }
 
         return list

@@ -5,4 +5,5 @@
     <string name="selections_sort">Selection Sort</string>
     <string name="merge_sort">Merge Sort</string>
     <string name="quick_sort">Quick Sort</string>
+    <string name="radix_sort">Radix Sort</string>
 </resources>

@@ -21,6 +21,12 @@ open class GraphBar(var center: Float, top: Float, val barThickness: Float, val 
         }
 
     var paint:Paint=Paint().apply { color= barDefaultColor }
+        set(value) {
+            lastPaint=paint
+            field = value
+        }
+
+    var lastPaint=paint
 
 
     fun moveHorizontalAbs(xPosition: Float) {
