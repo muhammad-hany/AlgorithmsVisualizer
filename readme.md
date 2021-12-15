@@ -16,6 +16,10 @@ quick sort
 
 <img src="/assets/quick.gif" width="150">
 
+merge sort
+
+<img src="/assets/merge.gif" width="150">
+
 insertion sort
 
 <img src="/assets/insertion.gif" width="150">
