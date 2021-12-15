@@ -14,7 +14,7 @@ class QuickAnimator(private val sortObj: QuickSort) {
         val pivot = sortObj.sortList[pivotIndex]
         val comparedBar = sortObj.sortList[comparedBarIndex]
         ValueAnimator.ofArgb(pivot.paint.color, sortObj.compareColor).apply {
-            duration = 500
+            duration = 300
             interpolator = LinearInterpolator()
             addUpdateListener {
                // pivot.paint.color = it.animatedValue as Int
